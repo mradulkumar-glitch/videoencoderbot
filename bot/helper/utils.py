@@ -10,7 +10,7 @@ def on_task_complete():
 
 def add_task(message: Message):
     try:
-      msg = message.reply_text("I Am Currently Downloading The Video After Downloading I Will Start Encoding 🍜 Eat This Till... And Join @Animeplex_AN, quote=True)
+      msg = message.reply_text("I Am Currently Downloading The Video After Downloading I Will Start Encoding 🍜 Eat This Till... And Join @Animeplex_AN", quote=True)
       filepath = message.download(file_name=download_dir)
       msg.edit("Downloading Finished Starting To Encode The Video In Given Codec HEVC")
       new_file = encode(filepath)
