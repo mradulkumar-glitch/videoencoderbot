@@ -10,22 +10,22 @@ def on_task_complete():
 
 def add_task(message: Message):
     try:
-      msg = message.reply_text("```Downloading video...```", quote=True)
+      msg = message.reply_text("I Am Currently Downloading The Video After Downloading I Will Start Encoding 🍜 Eat This Till... And Join @Animeplex_AN, quote=True)
       filepath = message.download(file_name=download_dir)
-      msg.edit("```Encoding video...```")
+      msg.edit("Downloading Finished Starting To Encode The Video In Given Codec HEVC")
       new_file = encode(filepath)
       if new_file:
-        msg.edit("```Video Encoded, getting metadata...```")
+        msg.edit("Video Encoded Finally Wait Getting Metadata And Starting To Upload")
         duration = get_duration(new_file)
         thumb = get_thumbnail(new_file, download_dir, duration / 4)
         width, height = get_width_height(new_file)
-        msg.edit("```Uploading video...```")
+        msg.edit("Uploading The Video Encoded By Me 😊")
         message.reply_video(new_file, quote=True, supports_streaming=True, thumb=thumb, duration=duration, width=width, height=height)
         os.remove(new_file)
         os.remove(thumb)
-        msg.edit("```Video Encoded to x265```")
+        msg.edit("Video Encoded to x265 Or HEVC Join @Animeplex_AN If You Like The Bot")
       else:
-        msg.edit("```Something wents wrong while encoding your file. Make sure it is not already in HEVC format.```")
+        msg.edit("Something wents wrong while encoding your file. Make sure it is not already in HEVC format Ask Owner @Animeplex_OP")
         os.remove(filepath)
     except Exception as e:
       msg.edit(f"```{e}```")
@@ -33,22 +33,22 @@ def add_task(message: Message):
 
 def url_task(message, media):
     try:
-      msg = message.reply_text("```Downloading video...```", quote=True)
+      msg = message.reply_text("I Am Currently Downloading The Video After Downloading I Will Start Encoding 🍜 Eat This Till... And Join @Animeplex_AN", quote=True)
       filepath = media
-      msg.edit("```Encoding video...```")
+      msg.edit("Downloading Finished Starting To Encode The Video In Given Codec HEVC")
       new_file = encode(filepath)
       if new_file:
-        msg.edit("```Video Encoded, getting metadata...```")
+        msg.edit("Video Encoded Finally Wait Getting Metadata And Starting To Upload")
         duration = get_duration(new_file)
         thumb = get_thumbnail(new_file, download_dir, duration / 4)
         width, height = get_width_height(new_file)
-        msg.edit("```Uploading video...```")
+        msg.edit("Uploading The Video Encoded By Me 😊")
         message.reply_video(new_file, quote=True, supports_streaming=True, thumb=thumb, duration=duration, width=width, height=height)
         os.remove(new_file)
         os.remove(thumb)
-        msg.edit("```Video Encoded to x265```")
+        msg.edit("Video Encoded to x265 Or HEVC Join @Animeplex_AN If You Like The Bot")
       else:
-        msg.edit("```Something wents wrong while encoding your file. Make sure it is not already in HEVC format.```")
+        msg.edit("Something wents wrong while encoding your file. Make sure it is not already in HEVC format Ask Owner @Animeplex_OP")
         os.remove(filepath)
     except Exception as e:
       msg.edit(f"```{e}```")
