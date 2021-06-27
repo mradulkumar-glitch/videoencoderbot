@@ -24,15 +24,15 @@ def help_message(app, message):
     
 @app.on_message(filters.incoming & filters.command(['start']))
 def start_message(app, message):
-    message.reply_text(f"Hi {message.from_user.mention()}\nI can encode Telegram files in x265. Made by @ToonsHub2006.", quote=True)
+    message.reply_text(f"Hi {message.from_user.mention()}\nI can encode Telegram files in x265. Made by @animeplex_op And Just Nothing 😂😂 Join @Animeplex_AN.", quote=True)
     
 @app.on_message(filters.user(sudo_users) & filters.incoming & (filters.video | filters.document))
 def encode_video(app, message):
     if message.document:
       if not message.document.mime_type in video_mimetype:
-        message.reply_text("```Invalid Video !\nMake sure its a valid video file.```", quote=True)
+        message.reply_text("```Invalid Video !\nMake sure its a valid video file Join @Animeplex_AN.```", quote=True)
         return
-    message.reply_text("```Added to queue...```", quote=True)
+    message.reply_text("```Added to queue... Join @Animeplex_AN```", quote=True)
     data.append(message)
     if len(data) == 1:
       add_task(message)
