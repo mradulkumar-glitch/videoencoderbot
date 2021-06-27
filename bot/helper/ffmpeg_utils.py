@@ -27,8 +27,8 @@ def encode(filepath):
         print('Skipping: no video codec reported')
         return None
     # Video transcode options
-    if video_codec[0] == 'hevc':
-        if video_codec[1] == 'hvc1':
+    if video_codec[0] == 'avc':
+        if video_codec[1] == 'avc1':
             print('Skipping: already h265 / hvc1')
             return None
         else:
@@ -36,7 +36,7 @@ def encode(filepath):
             video_opts = '-c:v copy -tag:v hvc1'
     else:
         # Transcode to h265 / hvc1
-        video_opts = '-c:v libx264 -crf 26 -b:v 250k -vf scale=854:480 -tag:v hvc15 -metadata title=@animeplex_an -preset medium -c:s copy -map 0'
+        video_opts = '-c:v libx264 -crf 26 -b:v 250k -vf scale=854:480 -tag:v avc15 -metadata title=@animeplex_an -preset medium -c:s copy -map 0'
     # Get the audio channel codec
     audio_codec = get_codec(filepath, channel='a:0')
     if audio_codec == []:
