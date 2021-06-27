@@ -36,7 +36,7 @@ def encode(filepath):
             video_opts = '-c:v copy -tag:v hvc1'
     else:
         # Transcode to h265 / hvc1
-        video_opts = '-c:v libx265 -crf 26 -b:v 250k -vf scale=854:480 -pix_fmt yuv420p10le -tag:v hvc15 -metadata title=@animeplex_an -preset medium -c:s copy -map 0'
+        video_opts = '-c:v libx265 -crf 26 -b:v 250k -vf scale=854:480 -tag:v hvc15 -metadata title=@animeplex_an -preset medium -c:s copy -map 0'
     # Get the audio channel codec
     audio_codec = get_codec(filepath, channel='a:0')
     if audio_codec == []:
@@ -76,4 +76,4 @@ def get_width_height(filepath):
     if metadata.has("width") and metadata.has("height"):
       return metadata.get("width"), metadata.get("height")
     else:
-      return 1280, 720
+      return 854, 480
